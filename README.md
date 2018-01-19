@@ -1,1 +1,10 @@
-# cvassignment
+# Image Classification
+
+The objective of the assignment is to classify images based on different categories. We are given a training data set where there are images of different objects belonging to different categories. We need to implement the bag of visual words model on the set of images to predict the accuracy on validation and test dataset. 
+ALGORITHM:
+Firstly we need to detect the interest points in every particular image and store them. In MATLAB interest point detection can be done using various methods like detectSURFFeatures, detectHarrisFeatures, etc. For this assignment, I have decided to use the detectSURFFeatures function. It returns a set of points where there is a detection of interest points.
+Now, we have to describe the interest points that have been detected. These are called interest point descriptors. These are 64-dimension vectors which describe the location of the interest point in space. In MATLAB the interest point descriptors can be obtained by using the function extractFeatures. 
+Each patch in an image is mapped to a certain codeword through the k-means clustering process and thus, each image can be represented by a histogram of the codewords. This is the final step before the actual classification, which is to generate histograms of the features extracted in each image
+Generally, classification works by first plotting training data into multidimensional space. Then each classifier plots testing data into the same multidimensional space as the training data and compares the data points between testing and training to determine the correct class for each individual query point
+  
+K-nearest neighbor algorithm  is a method for classifying objects based on closest training examples in the feature space. k-nearest neighbor algorithm is among the simplest of all machine learning algorithms. Training process for this algorithm only consists of storing feature vectors and labels of the training images. In the classification process, the unlabelled query point is simply assigned to the label of its k nearest neighbors.
